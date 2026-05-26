@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>박형진 보험설계사 | 굿리치 BTS본부</title>
-  <meta name="description" content="박형진 보험설계사 - 굿리치 GA BTS본부. 생명·건강·연금·기업보험 전문. 다양한 보험사 상품을 비교해 최적의 솔루션을 제안합니다." />
+  <title>박형진 팀장 | 굿리치 BTS사업단</title>
+  <meta name="description" content="보험비교 한번에 - 박형진 팀장. 굿리치 BTS사업단. 34개 보험사 종합컨설팅, 맞춤형 보험 설계 전문." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <style>
@@ -26,426 +26,7 @@
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-    }
-
-    /* ── HEADER ── */
-    header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #e5e8ef;
-      padding: 0 5vw;
-      height: 66px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .logo {
-      font-size: 1.15rem; font-weight: 700; color: var(--navy);
-      text-decoration: none; letter-spacing: -0.3px;
-    }
-    .logo span { color: var(--gold); }
-    nav { display: flex; gap: 28px; align-items: center; }
-    nav a {
-      text-decoration: none; color: var(--text-light);
-      font-size: 0.92rem; font-weight: 500;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--navy); }
-    .nav-cta {
-      background: var(--navy); color: var(--white) !important;
-      padding: 8px 20px; border-radius: 50px;
-      font-weight: 700 !important;
-      transition: background 0.2s !important;
-    }
-    .nav-cta:hover { background: var(--blue) !important; }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px; cursor: pointer;
-      background: none; border: none; padding: 4px;
-    }
-    .hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--navy); border-radius: 2px;
-      transition: 0.3s;
-    }
-    .mobile-menu {
-      display: none; position: fixed; top: 66px; left: 0; right: 0;
-      background: var(--white); border-bottom: 1px solid #e5e8ef;
-      padding: 16px 5vw; flex-direction: column; gap: 16px;
-      z-index: 99;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      text-decoration: none; color: var(--text); font-size: 1rem;
-      font-weight: 500; padding: 8px 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #2a5298 100%);
-      display: flex; align-items: center;
-      padding: 100px 5vw 60px;
-      position: relative; overflow: hidden;
-    }
-    #hero::before {
-      content: '';
-      position: absolute; top: -20%; right: -10%;
-      width: 60vw; height: 60vw; max-width: 700px; max-height: 700px;
-      background: radial-gradient(circle, rgba(212,160,23,0.15) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    #hero::after {
-      content: '';
-      position: absolute; bottom: -15%; left: -5%;
-      width: 40vw; height: 40vw; max-width: 500px; max-height: 500px;
-      background: radial-gradient(circle, rgba(47,128,237,0.12) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .hero-inner {
-      max-width: 1100px; margin: 0 auto; width: 100%;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-      position: relative; z-index: 1;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(212,160,23,0.2); border: 1px solid rgba(212,160,23,0.4);
-      color: var(--gold-light); font-size: 0.85rem; font-weight: 500;
-      padding: 6px 14px; border-radius: 50px; margin-bottom: 20px;
-    }
-    .hero-badge::before { content: '✦'; font-size: 0.7rem; }
-    .hero-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900; color: var(--white);
-      line-height: 1.25; letter-spacing: -1px;
-      margin-bottom: 20px;
-    }
-    .hero-title em {
-      color: var(--gold-light); font-style: normal;
-      display: block;
-    }
-    .hero-desc {
-      color: rgba(255,255,255,0.8); font-size: 1.05rem;
-      margin-bottom: 36px; max-width: 440px;
-    }
-    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--gold); color: var(--navy-dark);
-      font-weight: 700; font-size: 1rem;
-      padding: 14px 28px; border-radius: 50px;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 16px rgba(212,160,23,0.35);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,160,23,0.45); }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.12); color: var(--white);
-      font-weight: 600; font-size: 1rem;
-      padding: 14px 28px; border-radius: 50px;
-      text-decoration: none; border: 1px solid rgba(255,255,255,0.3);
-      transition: background 0.2s;
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
-    .hero-stats {
-      display: flex; gap: 32px; margin-top: 44px;
-    }
-    .stat { color: rgba(255,255,255,0.9); }
-    .stat-num {
-      font-size: 2rem; font-weight: 900; color: var(--gold-light);
-      line-height: 1; display: block;
-    }
-    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-    .hero-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 24px; padding: 36px;
-      backdrop-filter: blur(10px);
-    }
-    .hero-card-title {
-      color: var(--gold-light); font-size: 0.88rem;
-      font-weight: 600; letter-spacing: 1px;
-      text-transform: uppercase; margin-bottom: 20px;
-    }
-    .profile-info { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
-    .profile-avatar {
-      width: 72px; height: 72px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.8rem; font-weight: 900; color: var(--navy-dark);
-      flex-shrink: 0;
-    }
-    .profile-name { color: var(--white); font-size: 1.3rem; font-weight: 700; }
-    .profile-sub { color: rgba(255,255,255,0.6); font-size: 0.88rem; margin-top: 4px; }
-    .contact-list { display: flex; flex-direction: column; gap: 12px; }
-    .contact-item {
-      display: flex; align-items: center; gap: 12px;
-      color: rgba(255,255,255,0.85); font-size: 0.92rem;
-    }
-    .contact-icon {
-      width: 36px; height: 36px; border-radius: 10px;
-      background: rgba(255,255,255,0.1);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0;
-    }
-
-    /* ── SECTION COMMON ── */
-    section { padding: 80px 5vw; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.82rem; font-weight: 700; letter-spacing: 2px;
-      color: var(--blue); text-transform: uppercase; margin-bottom: 10px;
-    }
-    .section-title {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 900; color: var(--navy);
-      letter-spacing: -0.5px; margin-bottom: 14px;
-    }
-    .section-desc { color: var(--text-light); font-size: 1.05rem; max-width: 560px; }
-
-    /* ── ABOUT ── */
-    #about { background: var(--gray); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1.4fr;
-      gap: 60px; align-items: center; margin-top: 50px;
-    }
-    .about-card {
-      background: var(--white); border-radius: var(--radius);
-      padding: 40px; box-shadow: var(--shadow);
-    }
-    .about-avatar-wrap {
-      width: 110px; height: 110px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.8rem; font-weight: 900; color: var(--white);
-      margin: 0 auto 20px;
-    }
-    .about-name { text-align: center; font-size: 1.5rem; font-weight: 800; color: var(--navy); }
-    .about-pos { text-align: center; color: var(--text-light); font-size: 0.9rem; margin-top: 4px; }
-    .about-divider { border: none; border-top: 1px solid #eee; margin: 24px 0; }
-    .about-meta { display: flex; flex-direction: column; gap: 12px; }
-    .about-meta-item { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; }
-    .about-meta-label { color: var(--text-light); min-width: 58px; }
-    .about-meta-value { color: var(--text); font-weight: 600; }
-    .about-text { }
-    .about-text p {
-      color: var(--text-light); font-size: 1rem;
-      margin-bottom: 18px; line-height: 1.85;
-    }
-    .about-text p strong { color: var(--navy); font-weight: 700; }
-    .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
-    .feature-chip {
-      background: var(--blue-light); border-radius: 12px;
-      padding: 14px 16px; font-size: 0.9rem;
-    }
-    .feature-chip-icon { font-size: 1.3rem; margin-bottom: 6px; }
-    .feature-chip-text { color: var(--navy); font-weight: 600; }
-
-    /* ── SEGMENTS ── */
-    #segments { background: var(--white); }
-    .segments-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 24px; margin-top: 50px;
-    }
-    .segment-card {
-      background: var(--gray); border-radius: var(--radius);
-      padding: 32px 28px; position: relative; overflow: hidden;
-      transition: transform 0.25s, box-shadow 0.25s;
-      cursor: default;
-    }
-    .segment-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 36px rgba(27,58,107,0.14);
-    }
-    .segment-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 4px;
-    }
-    .seg-blue::before { background: linear-gradient(90deg, #2f80ed, #56ccf2); }
-    .seg-green::before { background: linear-gradient(90deg, #27ae60, #6fcf97); }
-    .seg-orange::before { background: linear-gradient(90deg, #e67e22, #f6d365); }
-    .seg-red::before { background: linear-gradient(90deg, #eb5757, #f9a8a8); }
-    .seg-purple::before { background: linear-gradient(90deg, #6c5ce7, #a29bfe); }
-    .seg-gold::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
-    .segment-emoji { font-size: 2.2rem; margin-bottom: 14px; }
-    .segment-target {
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--text-light);
-      margin-bottom: 6px;
-    }
-    .segment-title { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
-    .segment-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; margin-bottom: 16px; }
-    .segment-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      background: var(--white); border: 1px solid #e0e4ef;
-      color: var(--navy); font-size: 0.78rem; font-weight: 600;
-      padding: 4px 10px; border-radius: 50px;
-    }
-
-    /* ── WHY GOODRICH ── */
-    #why { background: var(--navy); }
-    #why .section-label { color: var(--gold-light); }
-    #why .section-title { color: var(--white); }
-    #why .section-desc { color: rgba(255,255,255,0.65); }
-    .why-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 24px; margin-top: 50px;
-    }
-    .why-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius); padding: 28px 24px;
-      text-align: center;
-      transition: background 0.2s;
-    }
-    .why-card:hover { background: rgba(255,255,255,0.1); }
-    .why-icon { font-size: 2.4rem; margin-bottom: 14px; }
-    .why-title { color: var(--gold-light); font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-    .why-desc { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.7; }
-
-    /* ── PROCESS ── */
-    #process { background: var(--gray); }
-    .process-steps {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 0; margin-top: 50px; position: relative;
-    }
-    .process-steps::before {
-      content: '';
-      position: absolute; top: 32px; left: 10%; right: 10%;
-      height: 2px; background: linear-gradient(90deg, var(--blue) 0%, var(--navy) 100%);
-      z-index: 0;
-    }
-    .step {
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center; position: relative; z-index: 1;
-    }
-    .step-num {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: var(--navy); color: var(--white);
-      font-size: 1.3rem; font-weight: 900;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px; border: 3px solid var(--gray);
-      box-shadow: 0 0 0 3px var(--navy);
-    }
-    .step:nth-child(3) .step-num { background: var(--gold); box-shadow: 0 0 0 3px var(--gold); }
-    .step-title { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .step-desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; padding: 0 8px; }
-
-    /* ── REVIEWS ── */
-    #reviews { background: var(--white); }
-    .reviews-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 24px; margin-top: 50px;
-    }
-    .review-card {
-      background: var(--gray); border-radius: var(--radius); padding: 28px;
-      position: relative;
-    }
-    .review-card::before {
-      content: '"';
-      position: absolute; top: 16px; right: 20px;
-      font-size: 4rem; color: var(--navy); opacity: 0.06;
-      font-family: Georgia, serif; line-height: 1;
-    }
-    .stars { color: #f6b93b; font-size: 1.1rem; margin-bottom: 14px; }
-    .review-text { color: var(--text-light); font-size: 0.92rem; line-height: 1.75; margin-bottom: 20px; }
-    .reviewer { display: flex; align-items: center; gap: 12px; }
-    .reviewer-avatar {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: var(--navy); color: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; font-weight: 700;
-    }
-    .reviewer-name { font-size: 0.9rem; font-weight: 700; color: var(--navy); }
-    .reviewer-info { font-size: 0.8rem; color: var(--text-light); }
-
-    /* ── CONTACT ── */
-    #contact { background: var(--gray); }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.4fr;
-      gap: 60px; margin-top: 50px;
-    }
-    .contact-info { display: flex; flex-direction: column; gap: 20px; }
-    .contact-card {
-      background: var(--white); border-radius: var(--radius);
-      padding: 22px 24px; box-shadow: var(--shadow);
-      display: flex; align-items: center; gap: 16px;
-      text-decoration: none; color: inherit;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .contact-card:hover { transform: translateX(4px); box-shadow: 0 8px 28px rgba(27,58,107,0.14); }
-    .contact-card-icon {
-      width: 52px; height: 52px; border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; flex-shrink: 0;
-    }
-    .c-phone .contact-card-icon { background: #e8f4fd; }
-    .c-kakao .contact-card-icon { background: #fef3cd; }
-    .c-email .contact-card-icon { background: #f0eeff; }
-    .contact-card-label { font-size: 0.8rem; color: var(--text-light); margin-bottom: 3px; }
-    .contact-card-value { font-size: 1rem; font-weight: 700; color: var(--navy); }
-    .form-card {
-      background: var(--white); border-radius: var(--radius);
-      padding: 40px; box-shadow: var(--shadow);
-    }
-    .form-title { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
-    .form-sub { font-size: 0.9rem; color: var(--text-light); margin-bottom: 28px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { margin-bottom: 18px; }
-    .form-label { font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 6px; display: block; }
-    .form-input, .form-select, .form-textarea {
-      width: 100%; padding: 12px 16px;
-      border: 1.5px solid #e0e4ef; border-radius: 10px;
-      font-family: inherit; font-size: 0.95rem; color: var(--text);
-      background: var(--white);
-      transition: border-color 0.2s;
-      outline: none;
-    }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--blue);
-    }
-    .form-textarea { resize: vertical; min-height: 100px; }
-    .form-select { cursor: pointer; }
-    .form-submit {
-      width: 100%; padding: 15px;
-      background: var(--navy); color: var(--white);
-      border: none; border-radius: 50px;
-      font-family: inherit; font-size: 1rem; font-weight: 700;
-      cursor: pointer; transition: background 0.2s, transform 0.2s;
-    }
-    .form-submit:hover { background: var(--blue); transform: translateY(-1px); }
-    .form-notice { font-size: 0.8rem; color: var(--text-light); text-align: center; margin-top: 12px; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy-dark); color: rgba(255,255,255,0.55);
-      padding: 40px 5vw; text-align: center; font-size: 0.85rem;
-    }
-    footer strong { color: var(--white); }
-    footer a { color: var(--gold-light); text-decoration: none; }
-
-    /* ── FLOATING CTA ── */
-    .floating-cta {
-      position: fixed; bottom: 28px; right: 28px; z-index: 90;
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .fab {
-      width: 54px; height: 54px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; text-decoration: none;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .fab:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.28); }
-    .fab-kakao { background: #fee500; }
-    .fab-phone { background: var(--navy); }
+    body { font-family: 'Noto Sans KR', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; }
 
     /* ── DARK MODE ── */
     html.dark {
@@ -457,31 +38,23 @@
       --shadow: 0 4px 24px rgba(0,0,0,0.35);
     }
     html.dark body { background: #141720; }
-    html.dark header {
-      background: rgba(20,23,32,0.96);
-      border-bottom-color: #2a2f42;
-    }
-    html.dark .mobile-menu {
-      background: #141720;
-      border-bottom-color: #2a2f42;
-    }
+    html.dark header { background: rgba(20,23,32,0.96); border-bottom-color: #2a2f42; }
+    html.dark .mobile-menu { background: #141720; border-bottom-color: #2a2f42; }
     html.dark .mobile-menu a { border-bottom-color: #2a2f42; color: var(--text); }
     html.dark .about-divider { border-top-color: #2a2f42; }
-    html.dark .form-input,
-    html.dark .form-select,
-    html.dark .form-textarea {
-      background: #1e2130;
-      border-color: #2a2f42;
-      color: var(--text);
+    html.dark .form-input, html.dark .form-select, html.dark .form-textarea {
+      background: #1e2130; border-color: #2a2f42; color: var(--text);
     }
-    html.dark .form-input::placeholder,
-    html.dark .form-textarea::placeholder { color: #4a5068; }
+    html.dark .form-input::placeholder, html.dark .form-textarea::placeholder { color: #4a5068; }
     html.dark .tag { background: #1e2130; border-color: #2a2f42; color: #a0b0d0; }
     html.dark .step-num { border-color: #1e2130; }
     html.dark .c-phone .contact-card-icon { background: #1a2535; }
     html.dark .c-kakao .contact-card-icon { background: #2a2210; }
     html.dark .c-email .contact-card-icon { background: #1e1a2e; }
-    html.dark .segment-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.4); }
+    html.dark .c-blog .contact-card-icon { background: #1a2e1a; }
+    html.dark .c-youtube .contact-card-icon { background: #2e1a1a; }
+    html.dark .product-card { background: #1e2130; }
+    html.dark .product-card .tag { background: #141720; }
 
     /* ── THEME TOGGLE ── */
     .theme-toggle {
@@ -495,6 +68,338 @@
     .theme-toggle:hover { transform: scale(1.1); }
     html.dark .theme-toggle { background: #2a2f42; border-color: #3a4060; }
 
+    /* ── HEADER ── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e8ef; padding: 0 5vw; height: 66px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 1.15rem; font-weight: 700; color: var(--navy); text-decoration: none; letter-spacing: -0.3px; }
+    .logo span { color: var(--gold); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { text-decoration: none; color: var(--text-light); font-size: 0.92rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--navy); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 8px 20px; border-radius: 50px; font-weight: 700 !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--blue) !important; }
+    .header-right { display: flex; gap: 12px; align-items: center; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: 0.3s; }
+    .mobile-menu {
+      display: none; position: fixed; top: 66px; left: 0; right: 0;
+      background: var(--white); border-bottom: 1px solid #e5e8ef;
+      padding: 16px 5vw; flex-direction: column; gap: 16px; z-index: 99;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { text-decoration: none; color: var(--text); font-size: 1rem; font-weight: 500; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #2a5298 100%);
+      display: flex; align-items: center; padding: 100px 5vw 60px;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; top: -20%; right: -10%;
+      width: 60vw; height: 60vw; max-width: 700px; max-height: 700px;
+      background: radial-gradient(circle, rgba(212,160,23,0.15) 0%, transparent 70%); border-radius: 50%;
+    }
+    #hero::after {
+      content: ''; position: absolute; bottom: -15%; left: -5%;
+      width: 40vw; height: 40vw; max-width: 500px; max-height: 500px;
+      background: radial-gradient(circle, rgba(47,128,237,0.12) 0%, transparent 70%); border-radius: 50%;
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(212,160,23,0.2); border: 1px solid rgba(212,160,23,0.4);
+      color: var(--gold-light); font-size: 0.85rem; font-weight: 500;
+      padding: 6px 14px; border-radius: 50px; margin-bottom: 20px;
+    }
+    .hero-badge::before { content: '✦'; font-size: 0.7rem; }
+    .hero-sub-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85); font-size: 0.78rem; font-weight: 500;
+      padding: 4px 12px; border-radius: 50px; margin-left: 8px;
+    }
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--white);
+      line-height: 1.25; letter-spacing: -1px; margin-bottom: 20px;
+    }
+    .hero-title em { color: var(--gold-light); font-style: normal; display: block; }
+    .hero-desc { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 36px; max-width: 440px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--navy-dark); font-weight: 700; font-size: 1rem;
+      padding: 14px 28px; border-radius: 50px; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(212,160,23,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,160,23,0.45); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12); color: var(--white); font-weight: 600; font-size: 1rem;
+      padding: 14px 28px; border-radius: 50px; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3); transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+    .hero-stats { display: flex; gap: 32px; margin-top: 44px; }
+    .stat { color: rgba(255,255,255,0.9); }
+    .stat-num { font-size: 2rem; font-weight: 900; color: var(--gold-light); line-height: 1; display: block; }
+    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+
+    /* Hero card */
+    .hero-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px; padding: 36px; backdrop-filter: blur(10px);
+    }
+    .hero-card-title { color: var(--gold-light); font-size: 0.88rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .profile-photo-wrap {
+      width: 160px; height: 200px; border-radius: 16px; overflow: hidden;
+      margin: 0 auto 20px; border: 2px solid rgba(212,160,23,0.4);
+      background: linear-gradient(135deg, rgba(27,58,107,0.8), rgba(42,82,152,0.8));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .profile-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .profile-photo-fallback {
+      font-size: 3.5rem; font-weight: 900; color: var(--gold-light);
+      display: none;
+    }
+    .profile-info-row { text-align: center; margin-bottom: 20px; }
+    .profile-name { color: var(--white); font-size: 1.4rem; font-weight: 800; }
+    .profile-name-en { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 2px; letter-spacing: 1px; }
+    .profile-sub { color: rgba(255,255,255,0.6); font-size: 0.88rem; margin-top: 4px; }
+    .contact-list { display: flex; flex-direction: column; gap: 10px; }
+    .contact-item {
+      display: flex; align-items: center; gap: 12px;
+      color: rgba(255,255,255,0.85); font-size: 0.88rem; text-decoration: none;
+    }
+    .contact-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0;
+    }
+    .contact-item-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); display: block; margin-bottom: 1px; }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 80px 5vw; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.82rem; font-weight: 700; letter-spacing: 2px; color: var(--blue); text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 14px; }
+    .section-desc { color: var(--text-light); font-size: 1.05rem; max-width: 560px; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--gray); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; margin-top: 50px; }
+    .about-card { background: var(--white); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow); }
+    .about-photo-wrap {
+      width: 140px; height: 180px; border-radius: 14px; overflow: hidden;
+      margin: 0 auto 16px; border: 2px solid #e8eef8;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .about-photo-fallback { font-size: 3rem; font-weight: 900; color: var(--white); display: none; }
+    .about-name { text-align: center; font-size: 1.5rem; font-weight: 800; color: var(--navy); }
+    .about-name-en { text-align: center; font-size: 0.85rem; color: var(--text-light); letter-spacing: 1px; margin-top: 3px; }
+    .about-pos { text-align: center; color: var(--text-light); font-size: 0.9rem; margin-top: 6px; }
+    .about-divider { border: none; border-top: 1px solid #eee; margin: 20px 0; }
+    .about-meta { display: flex; flex-direction: column; gap: 10px; }
+    .about-meta-item { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; }
+    .about-meta-label { color: var(--text-light); min-width: 52px; flex-shrink: 0; }
+    .about-meta-value { color: var(--text); font-weight: 600; word-break: break-all; }
+    .about-meta-value a { color: var(--navy); text-decoration: none; }
+    .about-meta-value a:hover { color: var(--blue); }
+    .about-text p { color: var(--text-light); font-size: 1rem; margin-bottom: 18px; line-height: 1.85; }
+    .about-text p strong { color: var(--navy); font-weight: 700; }
+    .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+    .feature-chip { background: var(--blue-light); border-radius: 12px; padding: 14px 16px; font-size: 0.9rem; }
+    .feature-chip-icon { font-size: 1.3rem; margin-bottom: 6px; }
+    .feature-chip-text { color: var(--navy); font-weight: 600; }
+    .about-sns { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .sns-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: 50px; font-size: 0.82rem; font-weight: 600;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .sns-btn:hover { opacity: 0.82; }
+    .sns-blog { background: #03c75a; color: #fff; }
+    .sns-youtube { background: #ff0000; color: #fff; }
+    .sns-kakao { background: #fee500; color: #3a1d1d; }
+    .sns-goodrich { background: var(--navy); color: #fff; }
+
+    /* ── PRODUCTS ── */
+    #products { background: var(--white); }
+    .products-header-row {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+      margin-bottom: 40px; margin-top: 16px;
+    }
+    .service-badge {
+      background: var(--navy); color: var(--white);
+      font-size: 0.82rem; font-weight: 700; padding: 6px 14px; border-radius: 50px;
+    }
+    .service-badge.outline {
+      background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+    }
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .product-card {
+      background: var(--gray); border-radius: var(--radius); padding: 24px 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .product-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .product-card:nth-child(1)::before, .product-card:nth-child(7)::before { background: linear-gradient(90deg,#1b3a6b,#2f80ed); }
+    .product-card:nth-child(2)::before, .product-card:nth-child(8)::before { background: linear-gradient(90deg,#27ae60,#6fcf97); }
+    .product-card:nth-child(3)::before, .product-card:nth-child(9)::before { background: linear-gradient(90deg,#2f80ed,#56ccf2); }
+    .product-card:nth-child(4)::before, .product-card:nth-child(10)::before { background: linear-gradient(90deg,#e67e22,#f6d365); }
+    .product-card:nth-child(5)::before, .product-card:nth-child(11)::before { background: linear-gradient(90deg,#6c5ce7,#a29bfe); }
+    .product-card:nth-child(6)::before, .product-card:nth-child(12)::before { background: linear-gradient(90deg,#eb5757,#f9a8a8); }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(27,58,107,0.12); }
+    .product-icon { font-size: 2rem; margin-bottom: 10px; }
+    .product-name-kr { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+    .product-name-en { font-size: 0.75rem; color: var(--text-light); margin-bottom: 10px; }
+    .product-desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.65; }
+
+    /* ── SEGMENTS ── */
+    #segments { background: var(--gray); }
+    .segments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+    .segment-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 32px 28px; position: relative; overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s; cursor: default;
+    }
+    .segment-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(27,58,107,0.14); }
+    .segment-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+    .seg-blue::before { background: linear-gradient(90deg,#2f80ed,#56ccf2); }
+    .seg-green::before { background: linear-gradient(90deg,#27ae60,#6fcf97); }
+    .seg-orange::before { background: linear-gradient(90deg,#e67e22,#f6d365); }
+    .seg-red::before { background: linear-gradient(90deg,#eb5757,#f9a8a8); }
+    .seg-purple::before { background: linear-gradient(90deg,#6c5ce7,#a29bfe); }
+    .seg-gold::before { background: linear-gradient(90deg,var(--gold),var(--gold-light)); }
+    .segment-emoji { font-size: 2.2rem; margin-bottom: 14px; }
+    .segment-target { font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; }
+    .segment-title { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .segment-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; margin-bottom: 16px; }
+    .segment-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { background: var(--gray); border: 1px solid #e0e4ef; color: var(--navy); font-size: 0.78rem; font-weight: 600; padding: 4px 10px; border-radius: 50px; }
+
+    /* ── WHY ── */
+    #why { background: var(--navy); }
+    #why .section-label { color: var(--gold-light); }
+    #why .section-title { color: var(--white); }
+    #why .section-desc { color: rgba(255,255,255,0.65); }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 50px; }
+    .why-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius); padding: 28px 24px; text-align: center; transition: background 0.2s;
+    }
+    .why-card:hover { background: rgba(255,255,255,0.1); }
+    .why-icon { font-size: 2.4rem; margin-bottom: 14px; }
+    .why-title { color: var(--gold-light); font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .why-desc { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.7; }
+
+    /* ── PROCESS ── */
+    #process { background: var(--gray); }
+    .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 50px; position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute; top: 32px; left: 10%; right: 10%;
+      height: 2px; background: linear-gradient(90deg, var(--blue) 0%, var(--navy) 100%); z-index: 0;
+    }
+    .step { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 1; }
+    .step-num {
+      width: 64px; height: 64px; border-radius: 50%; background: var(--navy); color: var(--white);
+      font-size: 1.3rem; font-weight: 900; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; border: 3px solid var(--gray); box-shadow: 0 0 0 3px var(--navy);
+    }
+    .step:nth-child(3) .step-num { background: var(--gold); box-shadow: 0 0 0 3px var(--gold); }
+    .step-title { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .step-desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; padding: 0 8px; }
+
+    /* ── REVIEWS ── */
+    #reviews { background: var(--white); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+    .review-card { background: var(--gray); border-radius: var(--radius); padding: 28px; position: relative; }
+    .review-card::before {
+      content: '"'; position: absolute; top: 16px; right: 20px;
+      font-size: 4rem; color: var(--navy); opacity: 0.06; font-family: Georgia, serif; line-height: 1;
+    }
+    .stars { color: #f6b93b; font-size: 1.1rem; margin-bottom: 14px; }
+    .review-text { color: var(--text-light); font-size: 0.92rem; line-height: 1.75; margin-bottom: 20px; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--navy); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; }
+    .reviewer-name { font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+    .reviewer-info { font-size: 0.8rem; color: var(--text-light); }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--gray); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; margin-top: 50px; }
+    .contact-info { display: flex; flex-direction: column; gap: 14px; }
+    .contact-card {
+      background: var(--white); border-radius: var(--radius); padding: 18px 22px;
+      box-shadow: var(--shadow); display: flex; align-items: center; gap: 14px;
+      text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .contact-card:hover { transform: translateX(4px); box-shadow: 0 8px 28px rgba(27,58,107,0.14); }
+    .contact-card-icon { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+    .c-phone .contact-card-icon { background: #e8f4fd; }
+    .c-fax .contact-card-icon { background: #f0f4ff; }
+    .c-kakao .contact-card-icon { background: #fef3cd; }
+    .c-email .contact-card-icon { background: #f0eeff; }
+    .c-blog .contact-card-icon { background: #e8f8ef; }
+    .c-youtube .contact-card-icon { background: #ffeaea; }
+    .contact-card-label { font-size: 0.78rem; color: var(--text-light); margin-bottom: 2px; }
+    .contact-card-value { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .contact-address {
+      background: var(--white); border-radius: var(--radius); padding: 18px 22px; box-shadow: var(--shadow);
+      font-size: 0.85rem; color: var(--text-light); line-height: 1.8;
+    }
+    .contact-address strong { color: var(--text); }
+    .form-card { background: var(--white); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); }
+    .form-title { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .form-sub { font-size: 0.9rem; color: var(--text-light); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-label { font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 6px; display: block; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 12px 16px; border: 1.5px solid #e0e4ef; border-radius: 10px;
+      font-family: inherit; font-size: 0.95rem; color: var(--text); background: var(--white);
+      transition: border-color 0.2s; outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--blue); }
+    .form-textarea { resize: vertical; min-height: 100px; }
+    .form-select { cursor: pointer; }
+    .form-submit {
+      width: 100%; padding: 15px; background: var(--navy); color: var(--white);
+      border: none; border-radius: 50px; font-family: inherit; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: background 0.2s, transform 0.2s;
+    }
+    .form-submit:hover { background: var(--blue); transform: translateY(-1px); }
+    .form-notice { font-size: 0.8rem; color: var(--text-light); text-align: center; margin-top: 12px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 40px 5vw; text-align: center; font-size: 0.85rem; }
+    footer strong { color: var(--white); }
+    footer a { color: var(--gold-light); text-decoration: none; }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta { position: fixed; bottom: 28px; right: 28px; z-index: 90; display: flex; flex-direction: column; gap: 10px; }
+    .fab {
+      width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .fab:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.28); }
+    .fab-kakao { background: #fee500; }
+    .fab-phone { background: var(--navy); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -506,6 +411,7 @@
       .process-steps::before { display: none; }
       .reviews-grid { grid-template-columns: 1fr 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: repeat(3, 1fr); }
       nav { display: none; }
       .hamburger { display: flex; }
     }
@@ -518,6 +424,7 @@
       .form-row { grid-template-columns: 1fr; }
       .hero-stats { gap: 20px; }
       .about-features { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -525,24 +432,28 @@
 
 <!-- HEADER -->
 <header>
-  <a href="#hero" class="logo">박형진 <span>보험설계사</span></a>
+  <a href="#hero" class="logo">박형진 <span>팀장</span></a>
   <nav>
     <a href="#about">소개</a>
+    <a href="#products">취급상품</a>
     <a href="#segments">맞춤 솔루션</a>
-    <a href="#why">굿리치 GA</a>
+    <a href="#why">굿리치</a>
     <a href="#process">상담 과정</a>
     <a href="#reviews">후기</a>
     <a href="#contact" class="nav-cta">무료 상담</a>
   </nav>
-  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="테마 전환">🌙</button>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="메뉴">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="header-right">
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="테마 전환">🌙</button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="메뉴">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="closeMenu()">소개</a>
+  <a href="#products" onclick="closeMenu()">취급상품</a>
   <a href="#segments" onclick="closeMenu()">맞춤 솔루션</a>
-  <a href="#why" onclick="closeMenu()">굿리치 GA</a>
+  <a href="#why" onclick="closeMenu()">굿리치</a>
   <a href="#process" onclick="closeMenu()">상담 과정</a>
   <a href="#reviews" onclick="closeMenu()">후기</a>
   <a href="#contact" onclick="closeMenu()">무료 상담 신청</a>
@@ -552,15 +463,17 @@
 <section id="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-badge">굿리치 GA · BTS본부</div>
+      <div style="margin-bottom:16px;">
+        <div class="hero-badge">굿리치 · BTS사업단</div>
+        <span class="hero-sub-badge">굿리치 공식 블로그 칼럼 필진</span>
+      </div>
       <h1 class="hero-title">
-        당신의 상황에 맞는<br>
-        <em>최적의 보험을<br>설계해드립니다</em>
+        보험비교 한번에<br>
+        <em>박형진 팀장이<br>직접 설계합니다</em>
       </h1>
       <p class="hero-desc">
-        사회초년생부터 시니어까지, 개인과 기업 모두를 위한<br>
-        맞춤형 보험 솔루션. 여러 보험사를 비교해<br>
-        가장 유리한 조건을 찾아드립니다.
+        34개 보험사를 한 번에 비교해 가장 유리한 조건을 찾아드립니다.<br>
+        사회초년생부터 기업 오너까지, 모든 상황에 맞는 맞춤 솔루션.
       </p>
       <div class="hero-btns">
         <a href="https://open.kakao.com/me/bohumrich" target="_blank" class="btn-primary">💬 카카오로 상담하기</a>
@@ -568,49 +481,47 @@
       </div>
       <div class="hero-stats">
         <div class="stat">
-          <span class="stat-num">5년</span>
-          <span class="stat-label">보험 설계 경력</span>
+          <span class="stat-num">5년+</span>
+          <span class="stat-label">설계 경력</span>
         </div>
         <div class="stat">
-          <span class="stat-num">GA</span>
-          <span class="stat-label">독립 보험 대리점</span>
+          <span class="stat-num">34개</span>
+          <span class="stat-label">제휴 보험사</span>
         </div>
         <div class="stat">
           <span class="stat-num">전국</span>
-          <span class="stat-label">비대면 상담 가능</span>
+          <span class="stat-label">비대면 상담</span>
         </div>
       </div>
     </div>
     <div class="hero-card">
-      <div class="hero-card-title">📌 바로 연락하기</div>
-      <div class="profile-info">
-        <div class="profile-avatar">박</div>
-        <div>
-          <div class="profile-name">박형진 설계사</div>
-          <div class="profile-sub">굿리치 GA · BTS본부 · 경력 5년</div>
-        </div>
+      <div class="hero-card-title">📌 박형진 팀장</div>
+      <div class="profile-photo-wrap">
+        <img src="profile.jpg" alt="박형진 팀장"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="profile-photo-fallback">박</div>
+      </div>
+      <div class="profile-info-row">
+        <div class="profile-name">박형진 팀장</div>
+        <div class="profile-name-en">Hyeong jin Park</div>
+        <div class="profile-sub">굿리치 · BTS사업단</div>
       </div>
       <div class="contact-list">
-        <a href="tel:01036806229" class="contact-item" style="text-decoration:none;">
+        <a href="tel:01036806229" class="contact-item">
           <div class="contact-icon">📞</div>
-          <div>
-            <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:1px;">전화 상담</div>
-            010-3680-6229
-          </div>
+          <div><span class="contact-item-label">Mobile</span>010-3680-6229</div>
         </a>
-        <a href="https://open.kakao.com/me/bohumrich" target="_blank" class="contact-item" style="text-decoration:none;">
+        <a href="https://open.kakao.com/me/bohumrich" target="_blank" class="contact-item">
           <div class="contact-icon">💬</div>
-          <div>
-            <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:1px;">카카오 오픈채팅</div>
-            bohumrich
-          </div>
+          <div><span class="contact-item-label">KakaoTalk ID</span>phjzzzzz</div>
         </a>
-        <a href="mailto:phj1250@nate.com" class="contact-item" style="text-decoration:none;">
-          <div class="contact-icon">✉️</div>
-          <div>
-            <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:1px;">이메일</div>
-            phj1250@nate.com
-          </div>
+        <a href="https://blog.naver.com/phjzzzzz" target="_blank" class="contact-item">
+          <div class="contact-icon">📝</div>
+          <div><span class="contact-item-label">Blog</span>blog.naver.com/phjzzzzz</div>
+        </a>
+        <a href="https://youtube.com/@boheomrich" target="_blank" class="contact-item">
+          <div class="contact-icon">▶️</div>
+          <div><span class="contact-item-label">YouTube</span>@boheomrich</div>
         </a>
       </div>
     </div>
@@ -621,62 +532,172 @@
 <section id="about">
   <div class="section-inner">
     <div class="section-label">About</div>
-    <h2 class="section-title">박형진 설계사를 소개합니다</h2>
-    <p class="section-desc">5년간 다양한 고객의 보험 포트폴리오를 설계해온 전문가입니다.</p>
+    <h2 class="section-title">박형진 팀장을 소개합니다</h2>
+    <p class="section-desc">34개 보험사 종합컨설팅 전문가. 비교하고 선택하는 보험 설계.</p>
     <div class="about-grid">
       <div class="about-card">
-        <div class="about-avatar-wrap">박</div>
-        <div class="about-name">박형진</div>
-        <div class="about-pos">보험설계사 · 재무 컨설턴트</div>
+        <div class="about-photo-wrap">
+          <img src="profile.jpg" alt="박형진 팀장"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="about-photo-fallback">박</div>
+        </div>
+        <div class="about-name">박형진 팀장</div>
+        <div class="about-name-en">Hyeong jin Park</div>
+        <div class="about-pos">보험 컨설턴트 · 재무 설계사</div>
         <hr class="about-divider" />
         <div class="about-meta">
           <div class="about-meta-item">
             <span class="about-meta-label">소속</span>
-            <span class="about-meta-value">굿리치 GA · BTS본부</span>
+            <span class="about-meta-value">굿리치 · BTS사업단</span>
           </div>
           <div class="about-meta-item">
             <span class="about-meta-label">경력</span>
-            <span class="about-meta-value">5년</span>
+            <span class="about-meta-value">5년+</span>
           </div>
           <div class="about-meta-item">
-            <span class="about-meta-label">전화</span>
-            <span class="about-meta-value">010-3680-6229</span>
+            <span class="about-meta-label">Mobile</span>
+            <span class="about-meta-value"><a href="tel:01036806229">010-3680-6229</a></span>
           </div>
           <div class="about-meta-item">
-            <span class="about-meta-label">이메일</span>
-            <span class="about-meta-value" style="word-break:break-all;">phj1250@nate.com</span>
+            <span class="about-meta-label">Fax</span>
+            <span class="about-meta-value">0508-920-6229</span>
           </div>
+          <div class="about-meta-item">
+            <span class="about-meta-label">E-mail</span>
+            <span class="about-meta-value"><a href="mailto:phj1250@nate.com">phj1250@nate.com</a></span>
+          </div>
+          <div class="about-meta-item">
+            <span class="about-meta-label">주소</span>
+            <span class="about-meta-value" style="font-size:0.85rem;font-weight:500;">(47596) 부산시 연제구 중앙대로 1098 한진에셋빌딩 12층 굿리치 BTS사업단</span>
+          </div>
+        </div>
+        <div class="about-sns">
+          <a href="https://blog.naver.com/phjzzzzz" target="_blank" class="sns-btn sns-blog">📝 블로그</a>
+          <a href="https://youtube.com/@boheomrich" target="_blank" class="sns-btn sns-youtube">▶ YouTube</a>
+          <a href="https://open.kakao.com/me/bohumrich" target="_blank" class="sns-btn sns-kakao">💬 카카오</a>
+          <a href="http://www.goodrich.co.kr" target="_blank" class="sns-btn sns-goodrich">🌐 굿리치</a>
         </div>
       </div>
       <div class="about-text">
         <p>
-          안녕하세요, <strong>굿리치 GA BTS본부 박형진 설계사</strong>입니다.<br>
-          5년간 수백 명의 고객님들과 함께하며, 단순한 보험 판매가 아닌 <strong>진정한 리스크 관리</strong>를 목표로 일하고 있습니다.
+          안녕하세요, <strong>굿리치 BTS사업단 박형진 팀장</strong>입니다.<br>
+          5년간 수백 명의 고객님과 함께하며 단순한 보험 판매가 아닌 <strong>진정한 리스크 관리</strong>를 목표로 일하고 있습니다.
         </p>
         <p>
-          GA(독립 대리점) 소속이기 때문에 특정 보험사의 상품에 얽매이지 않고, <strong>삼성생명·한화·교보·DB손보·현대해상 등 다양한 보험사 상품을 비교</strong>해 고객님께 가장 유리한 조건을 제안드립니다.
+          굿리치는 <strong>34개 보험사 상품을 종합 비교</strong>하는 독립 GA(대리점)입니다. 특정 보험사에 얽매이지 않고 삼성생명·한화·교보·DB손보·현대해상 등 국내 주요 보험사 상품을 객관적으로 비교해 고객님께 가장 유리한 조건을 제안드립니다.
         </p>
         <p>
-          사회초년생의 첫 보험 설계부터, 기업 오너의 법인 보험까지 — 모든 상황에 맞는 솔루션을 드립니다.
+          <strong>굿리치 공식 블로그 보험 전문 칼럼을 필진</strong>으로 활동하며 보험 정보를 쉽게 전달하고 있습니다. 유튜브 채널 <strong>@boheomrich</strong>에서도 보험 정보를 확인하세요.
         </p>
         <div class="about-features">
           <div class="feature-chip">
-            <div class="feature-chip-icon">🏦</div>
-            <div class="feature-chip-text">여러 보험사 비교</div>
+            <div class="feature-chip-icon">⚖️</div>
+            <div class="feature-chip-text">34개 보험사 비교</div>
           </div>
           <div class="feature-chip">
-            <div class="feature-chip-icon">🎯</div>
-            <div class="feature-chip-text">맞춤형 설계</div>
+            <div class="feature-chip-icon">🔍</div>
+            <div class="feature-chip-text">숨은 보험금 찾기</div>
           </div>
           <div class="feature-chip">
-            <div class="feature-chip-icon">📱</div>
-            <div class="feature-chip-text">비대면 상담 가능</div>
+            <div class="feature-chip-icon">📊</div>
+            <div class="feature-chip-text">보장분석 점검</div>
           </div>
           <div class="feature-chip">
             <div class="feature-chip-icon">🔄</div>
-            <div class="feature-chip-text">기존 보험 리모델링</div>
+            <div class="feature-chip-text">보험 리모델링</div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-inner">
+    <div class="section-label">Products</div>
+    <h2 class="section-title">취급 보험 상품</h2>
+    <p class="section-desc">34개 보험사 종합컨설팅 — 생명·건강·손해보험 전 분야를 커버합니다.</p>
+    <div class="products-header-row">
+      <span class="service-badge">전국단위 인재채용</span>
+      <span class="service-badge">34개 보험사 종합컨설팅</span>
+      <span class="service-badge outline">1:1 커스텀컨설팅</span>
+      <span class="service-badge outline">보장분석점검</span>
+      <span class="service-badge outline">숨은보험금찾기 및 청구</span>
+      <span class="service-badge outline">보상전문상담</span>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-icon">🛡️</div>
+        <div class="product-name-kr">종신보험</div>
+        <div class="product-name-en">Life insurance</div>
+        <div class="product-desc">사망보장 / 상속세플랜 / 가장플랜 / 단기납종신 / 정기보험 / 목돈마련</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">❤️</div>
+        <div class="product-name-kr">건강보험</div>
+        <div class="product-name-en">Health insurance</div>
+        <div class="product-desc">암보험 / 진단비플랜 / 수술비플랜 / 입원비플랜 / SPOT상품</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🏥</div>
+        <div class="product-name-kr">실손보험</div>
+        <div class="product-name-en">Real loss insurance</div>
+        <div class="product-desc">1세대~4세대 실비까지 목적에 맞는 실비보험 유지</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🧑‍⚕️</div>
+        <div class="product-name-kr">간병보험</div>
+        <div class="product-name-en">Care insurance</div>
+        <div class="product-desc">간병지옥 탈출을 위한 대비책! 노후 및 간병 걱정없는 우리 가족</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🧠</div>
+        <div class="product-name-kr">치매보험</div>
+        <div class="product-name-en">Dementia insurance</div>
+        <div class="product-desc">장기간 진행되는 치매, 가족의 경제적 부담 대비</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🦷</div>
+        <div class="product-name-kr">치아보험</div>
+        <div class="product-name-en">Dental insurance</div>
+        <div class="product-desc">치과 치료비 부담 해소, 치료 재료를 선택할 수 있는 기회</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">👶</div>
+        <div class="product-name-kr">태아(어린이)보험</div>
+        <div class="product-name-en">Fetal insurance</div>
+        <div class="product-desc">태아보험 가입 상담 및 나라 정책 안내, 산모님도 보장받는 방법</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🚗</div>
+        <div class="product-name-kr">자동차보험</div>
+        <div class="product-name-en">Motor insurance</div>
+        <div class="product-desc">개인용 / 업무용 / 영업용 / 이륜차 / 특수차량 및 운전자 경력 관리</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🚦</div>
+        <div class="product-name-kr">운전자보험</div>
+        <div class="product-name-en">Driver insurance</div>
+        <div class="product-desc">12대 중과실 / 필수 가입 담보, 운전자를 보호하는 보험</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🔥</div>
+        <div class="product-name-kr">화재보험</div>
+        <div class="product-name-en">Fire insurance</div>
+        <div class="product-desc">최소 금액으로 화재 / 누수 / 배상 보장</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🐾</div>
+        <div class="product-name-kr">펫보험</div>
+        <div class="product-name-en">Pet insurance</div>
+        <div class="product-desc">나와 오랫동안 함께할 반려동물의 상해와 질병 보장</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">⛳</div>
+        <div class="product-name-kr">골프보험</div>
+        <div class="product-name-en">Golf insurance</div>
+        <div class="product-desc">골프장에서의 안전 및 용품 손해, 골프 활동 중 배상 책임</div>
       </div>
     </div>
   </div>
@@ -695,22 +716,18 @@
         <div class="segment-title">사회초년생</div>
         <div class="segment-desc">첫 직장, 첫 월급. 지금이 가장 저렴하게 보험을 가입할 수 있는 시기입니다. 적은 보험료로 최대 보장을 설계해드립니다.</div>
         <div class="segment-tags">
-          <span class="tag">실손보험</span>
-          <span class="tag">암보험</span>
-          <span class="tag">종신보험</span>
-          <span class="tag">저축/연금</span>
+          <span class="tag">실손보험</span><span class="tag">암보험</span>
+          <span class="tag">종신보험</span><span class="tag">저축/연금</span>
         </div>
       </div>
       <div class="segment-card seg-green">
         <div class="segment-emoji">👨‍💼</div>
         <div class="segment-target">40대</div>
         <div class="segment-title">바쁜 직장인</div>
-        <div class="segment-desc">가족을 부양하며 바쁜 40대. 소득 보장과 가족 보호, 그리고 노후 준비까지 균형 있는 포트폴리오가 필요합니다.</div>
+        <div class="segment-desc">가족을 부양하며 바쁜 40대. 소득 보장과 가족 보호, 노후 준비까지 균형 있는 포트폴리오가 필요합니다.</div>
         <div class="segment-tags">
-          <span class="tag">소득보상보험</span>
-          <span class="tag">정기보험</span>
-          <span class="tag">연금보험</span>
-          <span class="tag">변액보험</span>
+          <span class="tag">소득보상보험</span><span class="tag">정기보험</span>
+          <span class="tag">연금보험</span><span class="tag">변액보험</span>
         </div>
       </div>
       <div class="segment-card seg-orange">
@@ -719,10 +736,8 @@
         <div class="segment-title">건강이 걱정인 분</div>
         <div class="segment-desc">건강이 슬슬 걱정되는 50대. 유병자 보험, 간편 심사 보험 등 건강 상태에 상관없이 가입 가능한 상품을 안내합니다.</div>
         <div class="segment-tags">
-          <span class="tag">간편심사보험</span>
-          <span class="tag">유병자보험</span>
-          <span class="tag">중증질환</span>
-          <span class="tag">치매보험</span>
+          <span class="tag">간편심사보험</span><span class="tag">유병자보험</span>
+          <span class="tag">중증질환</span><span class="tag">치매보험</span>
         </div>
       </div>
       <div class="segment-card seg-red">
@@ -731,10 +746,8 @@
         <div class="segment-title">시니어 맞춤 보험</div>
         <div class="segment-desc">은퇴 후 안정적인 생활을 위한 보장 설계. 의료비 걱정 없이 건강한 노후를 보낼 수 있도록 도와드립니다.</div>
         <div class="segment-tags">
-          <span class="tag">실손보험</span>
-          <span class="tag">치매간병보험</span>
-          <span class="tag">연금수령</span>
-          <span class="tag">상속설계</span>
+          <span class="tag">실손보험</span><span class="tag">치매간병보험</span>
+          <span class="tag">연금수령</span><span class="tag">상속설계</span>
         </div>
       </div>
       <div class="segment-card seg-purple">
@@ -743,10 +756,8 @@
         <div class="segment-title">기업 보험 솔루션</div>
         <div class="segment-desc">법인 대표, 개인사업자를 위한 절세 전략과 기업 리스크 관리. 퇴직금, 임원 보상, 사업 지속성까지 설계합니다.</div>
         <div class="segment-tags">
-          <span class="tag">법인보험</span>
-          <span class="tag">퇴직금설계</span>
-          <span class="tag">임원배상</span>
-          <span class="tag">절세전략</span>
+          <span class="tag">법인보험</span><span class="tag">퇴직금설계</span>
+          <span class="tag">임원배상</span><span class="tag">절세전략</span>
         </div>
       </div>
       <div class="segment-card seg-gold">
@@ -755,27 +766,25 @@
         <div class="segment-title">꼼꼼한 보험 관리</div>
         <div class="segment-desc">복잡한 보험 용어가 어렵고, 갱신·보장 내용이 헷갈리신 분들을 위해 쉽고 정확하게 설명해드립니다.</div>
         <div class="segment-tags">
-          <span class="tag">보험점검</span>
-          <span class="tag">보험금청구</span>
-          <span class="tag">리모델링</span>
-          <span class="tag">방문상담</span>
+          <span class="tag">보험점검</span><span class="tag">보험금청구</span>
+          <span class="tag">리모델링</span><span class="tag">방문상담</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY GOODRICH -->
+<!-- WHY -->
 <section id="why">
   <div class="section-inner">
-    <div class="section-label">Why Goodrich GA</div>
-    <h2 class="section-title">굿리치 GA 설계사를 선택해야 하는 이유</h2>
+    <div class="section-label">Why Goodrich</div>
+    <h2 class="section-title">굿리치를 선택해야 하는 이유</h2>
     <p class="section-desc">특정 보험사에 묶이지 않아 고객에게 가장 유리한 상품을 선택할 수 있습니다.</p>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">⚖️</div>
-        <div class="why-title">객관적인 비교</div>
-        <div class="why-desc">20개 이상의 보험사 상품을 동시에 비교해 최적의 보장과 최저 보험료를 찾아드립니다.</div>
+        <div class="why-title">34개 보험사 비교</div>
+        <div class="why-desc">34개 보험사 상품을 동시에 비교해 최적의 보장과 최저 보험료를 찾아드립니다.</div>
       </div>
       <div class="why-card">
         <div class="why-icon">🎓</div>
@@ -783,9 +792,9 @@
         <div class="why-desc">5년의 현장 경험과 지속적인 교육으로 복잡한 보험도 쉽고 정확하게 설계해드립니다.</div>
       </div>
       <div class="why-card">
-        <div class="why-icon">🔒</div>
-        <div class="why-title">투명한 설명</div>
-        <div class="why-desc">보험료 구조, 보장 내용, 예외 조항까지 숨김 없이 설명드립니다. 가입 후 후회 없도록.</div>
+        <div class="why-icon">🔍</div>
+        <div class="why-title">숨은 보험금 찾기</div>
+        <div class="why-desc">내가 받을 수 있는 보험금을 놓치지 않도록 청구부터 수령까지 함께 도와드립니다.</div>
       </div>
       <div class="why-card">
         <div class="why-icon">📞</div>
@@ -816,7 +825,7 @@
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-title">맞춤 설계</div>
-        <div class="step-desc">고객 상황에 맞는 최적 상품을 비교·설계합니다</div>
+        <div class="step-desc">34개 보험사 상품을 비교해 최적 상품을 설계합니다</div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
@@ -886,31 +895,32 @@
       <div class="contact-info">
         <a href="tel:01036806229" class="contact-card c-phone">
           <div class="contact-card-icon">📞</div>
-          <div>
-            <div class="contact-card-label">전화 상담</div>
-            <div class="contact-card-value">010-3680-6229</div>
-          </div>
+          <div><div class="contact-card-label">Mobile</div><div class="contact-card-value">010-3680-6229</div></div>
         </a>
+        <div class="contact-card c-fax" style="cursor:default;">
+          <div class="contact-card-icon">📠</div>
+          <div><div class="contact-card-label">Fax</div><div class="contact-card-value">0508-920-6229</div></div>
+        </div>
         <a href="https://open.kakao.com/me/bohumrich" target="_blank" class="contact-card c-kakao">
           <div class="contact-card-icon">💬</div>
-          <div>
-            <div class="contact-card-label">카카오 오픈채팅</div>
-            <div class="contact-card-value">지금 바로 채팅하기</div>
-          </div>
+          <div><div class="contact-card-label">KakaoTalk · 카카오 오픈채팅</div><div class="contact-card-value">phjzzzzz · bohumrich</div></div>
         </a>
         <a href="mailto:phj1250@nate.com" class="contact-card c-email">
           <div class="contact-card-icon">✉️</div>
-          <div>
-            <div class="contact-card-label">이메일</div>
-            <div class="contact-card-value">phj1250@nate.com</div>
-          </div>
+          <div><div class="contact-card-label">E-mail</div><div class="contact-card-value">phj1250@nate.com</div></div>
         </a>
-        <div style="background:var(--white);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow);">
-          <div style="font-size:0.85rem;color:var(--text-light);line-height:1.7;">
-            📍 <strong>굿리치 GA · BTS본부</strong><br>
-            🕐 상담 가능 시간: 평일 09:00 ~ 20:00<br>
-            💡 카카오 오픈채팅으로 빠른 답변 가능
-          </div>
+        <a href="https://blog.naver.com/phjzzzzz" target="_blank" class="contact-card c-blog">
+          <div class="contact-card-icon">📝</div>
+          <div><div class="contact-card-label">네이버 블로그</div><div class="contact-card-value">blog.naver.com/phjzzzzz</div></div>
+        </a>
+        <a href="https://youtube.com/@boheomrich" target="_blank" class="contact-card c-youtube">
+          <div class="contact-card-icon">▶️</div>
+          <div><div class="contact-card-label">YouTube</div><div class="contact-card-value">youtube.com/@boheomrich</div></div>
+        </a>
+        <div class="contact-address">
+          📍 <strong>(47596) 부산시 연제구 중앙대로 1098</strong><br>
+          한진에셋빌딩 12층 굿리치 BTS사업단<br>
+          🕐 상담 가능: 평일 09:00 ~ 20:00
         </div>
       </div>
       <div class="form-card">
@@ -948,6 +958,7 @@
               <option>연금/노후 준비</option>
               <option>건강/실손 보험</option>
               <option>법인/기업 보험</option>
+              <option>숨은 보험금 찾기</option>
               <option>기타</option>
             </select>
           </div>
@@ -965,13 +976,19 @@
 
 <!-- FOOTER -->
 <footer>
-  <p style="margin-bottom:8px;"><strong>박형진 보험설계사</strong> · 굿리치 GA BTS본부</p>
-  <p style="margin-bottom:12px;">
+  <p style="margin-bottom:8px;"><strong>박형진 팀장</strong> · 굿리치 BTS사업단</p>
+  <p style="margin-bottom:6px;">
     📞 <a href="tel:01036806229">010-3680-6229</a> &nbsp;|&nbsp;
-    ✉️ <a href="mailto:phj1250@nate.com">phj1250@nate.com</a> &nbsp;|&nbsp;
+    📠 0508-920-6229 &nbsp;|&nbsp;
+    ✉️ <a href="mailto:phj1250@nate.com">phj1250@nate.com</a>
+  </p>
+  <p style="margin-bottom:6px;">
+    📝 <a href="https://blog.naver.com/phjzzzzz" target="_blank">blog.naver.com/phjzzzzz</a> &nbsp;|&nbsp;
+    ▶ <a href="https://youtube.com/@boheomrich" target="_blank">youtube.com/@boheomrich</a> &nbsp;|&nbsp;
     💬 <a href="https://open.kakao.com/me/bohumrich" target="_blank">카카오 오픈채팅</a>
   </p>
-  <p>© 2025 박형진 보험설계사. All rights reserved.</p>
+  <p style="margin-bottom:12px; font-size:0.8rem;">(47596) 부산시 연제구 중앙대로 1098 한진에셋빌딩 12층 굿리치 BTS사업단</p>
+  <p>© 2025 박형진 팀장. All rights reserved. | <a href="http://www.goodrich.co.kr" target="_blank">www.goodrich.co.kr</a></p>
 </footer>
 
 <!-- FLOATING CTA -->
@@ -981,7 +998,7 @@
 </div>
 
 <script>
-  // Theme toggle
+  // Theme
   (function() {
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -996,18 +1013,13 @@
     document.getElementById('themeToggle').textContent = isDark ? '☀️' : '🌙';
   }
 
-  // Set initial icon
   window.addEventListener('DOMContentLoaded', () => {
     const isDark = document.documentElement.classList.contains('dark');
     document.getElementById('themeToggle').textContent = isDark ? '☀️' : '🌙';
   });
 
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('mobileMenu').classList.remove('open');
-  }
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
 
   function submitForm(e) {
     e.preventDefault();
@@ -1031,9 +1043,9 @@
         el.target.style.transform = 'translateY(0)';
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
-  document.querySelectorAll('.segment-card, .why-card, .review-card, .step').forEach(el => {
+  document.querySelectorAll('.segment-card, .why-card, .review-card, .step, .product-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
