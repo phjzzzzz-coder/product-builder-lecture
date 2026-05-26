@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[##_title_##]</title>
+  <meta name="description" content="보험비교 한번에 - 박형진 팀장. 굿리치 BTS사업단. 34개 보험사 종합컨설팅." />
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_##]" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="[##_blog_link_##]" class="site-logo">박형진 <span>팀장</span></a>
+    <nav class="main-nav">
+      <a href="[##_blog_link_##]category/보험 정보 칼럼">📰 보험 칼럼</a>
+      <a href="[##_blog_link_##]category/보험상품 소개">🛡️ 상품 소개</a>
+      <a href="[##_blog_link_##]category/보상후기">💰 보상후기</a>
+      <a href="[##_blog_link_##]category/다이렉트 자동차보험">🚗 다이렉트 자동차</a>
+      <a href="[##_blog_link_##]category/이직문의">💼 이직문의</a>
+    </nav>
+    <div class="header-right">
+      <form class="search-form" action="[##_blog_link_##]search" method="get">
+        <input type="text" name="q" placeholder="검색" value="[##_search_name_##]" />
+        <button type="submit">🔍</button>
+      </form>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="테마 전환">🌙</button>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="메뉴">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="[##_blog_link_##]" onclick="closeMenu()">🏠 홈</a>
+  <a href="[##_blog_link_##]category/보험 정보 칼럼" onclick="closeMenu()">📰 보험 정보 칼럼</a>
+  <a href="[##_blog_link_##]category/보험상품 소개" onclick="closeMenu()">🛡️ 보험상품 소개</a>
+  <a href="[##_blog_link_##]category/보상후기" onclick="closeMenu()">💰 보상후기</a>
+  <a href="[##_blog_link_##]category/다이렉트 자동차보험" onclick="closeMenu()">🚗 다이렉트 자동차보험</a>
+  <a href="[##_blog_link_##]category/이직문의" onclick="closeMenu()">💼 이직문의</a>
+</div>
+
+<!-- PROFILE BANNER -->
+<div class="profile-banner">
+  <div class="banner-inner">
+    <div class="banner-photo">
+      <img src="./images/profile.jpg" alt="박형진 팀장"
+        onerror="this.style.display='none';document.getElementById('banner-fallback').style.display='flex';" />
+      <div id="banner-fallback" class="photo-fallback">박</div>
+    </div>
+    <div class="banner-info">
+      <div class="banner-badges">
+        <span class="banner-badge">굿리치 · BTS사업단</span>
+        <span class="banner-badge outline">굿리치 공식 블로그 칼럼 필진</span>
+      </div>
+      <h1 class="banner-name">박형진 <em>팀장</em></h1>
+      <p class="banner-en">Hyeong jin Park</p>
+      <p class="banner-tagline">보험비교 한번에 · 34개 보험사 종합컨설팅</p>
+      <div class="banner-contacts">
+        <a href="tel:01036806229">📞 010-3680-6229</a>
+        <a href="https://open.kakao.com/me/bohumrich" target="_blank">💬 카카오 상담</a>
+        <a href="https://blog.naver.com/phjzzzzz" target="_blank">📝 네이버 블로그</a>
+        <a href="https://youtube.com/@boheomrich" target="_blank">▶ 유튜브</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="site-wrapper">
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- ===== INDEX: 글 목록 ===== -->
+    <s_index_article_rep>
+    <article class="post-card">
+      <s_article_rep_thumbnail>
+      <a href="[##_article_rep_link_##]" class="post-thumb-link">
+        <img class="post-thumb" src="[##_article_rep_thumbnail_##]" alt="[##_article_rep_title_##]" loading="lazy" />
+      </a>
+      </s_article_rep_thumbnail>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-category">[##_article_rep_category_##]</span>
+          <span class="post-date">[##_article_rep_date_##]</span>
+        </div>
+        <h2 class="post-title">
+          <a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a>
+        </h2>
+        <p class="post-summary">[##_article_rep_summary_##]</p>
+        <a href="[##_article_rep_link_##]" class="post-more">더 읽기 →</a>
+      </div>
+    </article>
+    </s_index_article_rep>
+
+    <!-- ===== 페이징 ===== -->
+    <s_paging_rep>
+    <nav class="paging">
+      <s_paging_rep_link>
+      <a href="[##_paging_rep_link_##]" class="page-btn">[##_paging_rep_num_##]</a>
+      </s_paging_rep_link>
+      <s_paging_rep_void>
+      <span class="page-btn active">[##_paging_rep_num_##]</span>
+      </s_paging_rep_void>
+    </nav>
+    </s_paging_rep>
+
+    <!-- ===== 단일 글 보기 ===== -->
+    <s_article_rep>
+    <article class="single-post">
+      <header class="single-header">
+        <div class="single-meta">
+          <span class="post-category">[##_article_rep_category_##]</span>
+          <span class="post-date">[##_article_rep_date_##]</span>
+        </div>
+        <h1 class="single-title">[##_article_rep_title_##]</h1>
+        <div class="single-author">
+          <div class="author-avatar">박</div>
+          <div>
+            <div class="author-name">박형진 팀장</div>
+            <div class="author-org">굿리치 · BTS사업단</div>
+          </div>
+        </div>
+      </header>
+      <div class="single-content">
+        [##_article_rep_desc_##]
+      </div>
+      <footer class="single-footer">
+        <div class="single-tags">[##_article_rep_tag_##]</div>
+        <div class="single-cta">
+          <p>📋 보험 상담이 필요하신가요?</p>
+          <a href="https://open.kakao.com/me/bohumrich" target="_blank" class="cta-inline-btn">💬 카카오로 무료 상담</a>
+          <a href="tel:01036806229" class="cta-inline-btn phone">📞 전화 상담</a>
+        </div>
+        <s_article_rep_replycount>
+        <div class="reply-count">💬 댓글 [##_article_rep_replycount_##]개</div>
+        </s_article_rep_replycount>
+      </footer>
+    </article>
+    </s_article_rep>
+
+    <!-- ===== 댓글 ===== -->
+    <s_rp_container>
+    <section class="comments-section">
+      <h3 class="comments-title">💬 댓글</h3>
+      <s_rp_rep>
+      <div class="comment-item">
+        <div class="comment-header">
+          <strong class="comment-name">[##_rp_name_##]</strong>
+          <span class="comment-date">[##_rp_date_##]</span>
+          <s_rp_rep_delete><a href="[##_rp_delete_##]" class="comment-del">삭제</a></s_rp_rep_delete>
+        </div>
+        <p class="comment-text">[##_rp_desc_##]</p>
+        <s_rp_rep_reply>
+        <div class="comment-reply-wrap">↪ [##_rp_rep_reply_##]</div>
+        </s_rp_rep_reply>
+      </div>
+      </s_rp_rep>
+      <s_write_rp>
+      <div class="comment-form">
+        <h4>댓글 작성</h4>
+        <div class="comment-form-row">
+          <input type="text" id="[##_rp_id_##]" placeholder="이름" class="comment-input" />
+          <input type="password" id="[##_rp_passwd_##]" placeholder="비밀번호" class="comment-input" />
+        </div>
+        <textarea id="[##_rp_content_##]" placeholder="댓글을 입력하세요" class="comment-textarea"></textarea>
+        <button onclick="[##_rp_onclick_##]" class="comment-submit">댓글 등록</button>
+      </div>
+      </s_write_rp>
+    </section>
+    </s_rp_container>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- 프로필 위젯 -->
+    <div class="widget profile-widget">
+      <div class="sidebar-photo-wrap">
+        <img src="./images/profile.jpg" alt="박형진 팀장"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="sidebar-avatar" style="display:none;">박</div>
+      </div>
+      <div class="sidebar-name">박형진 팀장</div>
+      <div class="sidebar-name-en">Hyeong jin Park</div>
+      <div class="sidebar-org">굿리치 · BTS사업단</div>
+      <div class="sidebar-tagline">"보험비교 한번에"</div>
+      <div class="sidebar-sns">
+        <a href="https://open.kakao.com/me/bohumrich" target="_blank" title="카카오" class="s-kakao">💬</a>
+        <a href="https://youtube.com/@boheomrich" target="_blank" title="유튜브" class="s-youtube">▶</a>
+        <a href="https://blog.naver.com/phjzzzzz" target="_blank" title="블로그" class="s-blog">📝</a>
+        <a href="tel:01036806229" title="전화" class="s-phone">📞</a>
+      </div>
+    </div>
+
+    <!-- 무료 상담 CTA -->
+    <div class="widget cta-widget">
+      <div class="cta-title">📋 무료 상담</div>
+      <p class="cta-desc">보험 비교는 무료입니다.<br>부담없이 연락주세요.</p>
+      <a href="https://open.kakao.com/me/bohumrich" target="_blank" class="cta-btn kakao-btn">💬 카카오 오픈채팅</a>
+      <a href="tel:01036806229" class="cta-btn phone-btn">📞 010-3680-6229</a>
+    </div>
+
+    <!-- 카테고리 -->
+    <div class="widget">
+      <h3 class="widget-title">📂 카테고리</h3>
+      <ul class="cat-list">
+        <li><a href="[##_blog_link_##]category/보험 정보 칼럼">📰 보험 정보 칼럼</a></li>
+        <li><a href="[##_blog_link_##]category/보험상품 소개">🛡️ 보험상품 소개</a></li>
+        <li><a href="[##_blog_link_##]category/보상후기">💰 보상후기</a></li>
+        <li><a href="[##_blog_link_##]category/다이렉트 자동차보험">🚗 다이렉트 자동차보험</a></li>
+        <li><a href="[##_blog_link_##]category/이직문의">💼 이직문의</a></li>
+      </ul>
+    </div>
+
+    <!-- 연락처 -->
+    <div class="widget">
+      <h3 class="widget-title">📌 연락처</h3>
+      <ul class="contact-list">
+        <li><span>📞</span><a href="tel:01036806229">010-3680-6229</a></li>
+        <li><span>📠</span><span>0508-920-6229</span></li>
+        <li><span>✉️</span><a href="mailto:phj1250@nate.com">phj1250@nate.com</a></li>
+        <li><span>💬</span><a href="https://open.kakao.com/me/bohumrich" target="_blank">카카오 오픈채팅</a></li>
+        <li><span>📍</span><span style="font-size:0.8rem;">부산시 연제구 중앙대로 1098<br>한진에셋빌딩 12층</span></li>
+      </ul>
+    </div>
+
+    <!-- 이직 문의 배너 -->
+    <div class="widget recruit-widget">
+      <div class="recruit-badge">💼 이직·채용 문의</div>
+      <p class="recruit-desc">보험 업계 이직을 고민 중이시라면 굿리치 BTS사업단과 함께하세요.</p>
+      <a href="[##_blog_link_##]category/이직문의" class="cta-btn recruit-btn">자세히 보기 →</a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p style="margin-bottom:6px;"><strong>박형진 팀장</strong> · 굿리치 BTS사업단</p>
+    <p style="margin-bottom:6px;">
+      📞 <a href="tel:01036806229">010-3680-6229</a> &nbsp;|&nbsp;
+      ✉️ <a href="mailto:phj1250@nate.com">phj1250@nate.com</a> &nbsp;|&nbsp;
+      💬 <a href="https://open.kakao.com/me/bohumrich" target="_blank">카카오 오픈채팅</a>
+    </p>
+    <p style="margin-bottom:10px; font-size:0.8rem;">
+      (47596) 부산시 연제구 중앙대로 1098 한진에셋빌딩 12층 굿리치 BTS사업단
+    </p>
+    <p style="font-size:0.8rem;">© 2025 박형진 팀장. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="https://open.kakao.com/me/bohumrich" target="_blank" class="fab fab-kakao" title="카카오 오픈채팅">💬</a>
+  <a href="tel:01036806229" class="fab fab-phone" title="전화 상담">📞</a>
+</div>
+
+<script>
+  (function() {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    document.getElementById('themeToggle').textContent = isDark ? '☀️' : '🌙';
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    document.getElementById('themeToggle').textContent = isDark ? '☀️' : '🌙';
+  });
+
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+</script>
+</body>
+</html>
