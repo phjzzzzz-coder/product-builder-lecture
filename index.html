@@ -447,6 +447,54 @@
     .fab-kakao { background: #fee500; }
     .fab-phone { background: var(--navy); }
 
+    /* ── DARK MODE ── */
+    html.dark {
+      --gray: #1e2130;
+      --white: #141720;
+      --text: #e2e6f0;
+      --text-light: #8a91a8;
+      --blue-light: #1a2740;
+      --shadow: 0 4px 24px rgba(0,0,0,0.35);
+    }
+    html.dark body { background: #141720; }
+    html.dark header {
+      background: rgba(20,23,32,0.96);
+      border-bottom-color: #2a2f42;
+    }
+    html.dark .mobile-menu {
+      background: #141720;
+      border-bottom-color: #2a2f42;
+    }
+    html.dark .mobile-menu a { border-bottom-color: #2a2f42; color: var(--text); }
+    html.dark .about-divider { border-top-color: #2a2f42; }
+    html.dark .form-input,
+    html.dark .form-select,
+    html.dark .form-textarea {
+      background: #1e2130;
+      border-color: #2a2f42;
+      color: var(--text);
+    }
+    html.dark .form-input::placeholder,
+    html.dark .form-textarea::placeholder { color: #4a5068; }
+    html.dark .tag { background: #1e2130; border-color: #2a2f42; color: #a0b0d0; }
+    html.dark .step-num { border-color: #1e2130; }
+    html.dark .c-phone .contact-card-icon { background: #1a2535; }
+    html.dark .c-kakao .contact-card-icon { background: #2a2210; }
+    html.dark .c-email .contact-card-icon { background: #1e1a2e; }
+    html.dark .segment-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.4); }
+
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--gray); border: 1.5px solid #e0e4ef;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.1rem;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { transform: scale(1.1); }
+    html.dark .theme-toggle { background: #2a2f42; border-color: #3a4060; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -486,6 +534,7 @@
     <a href="#reviews">후기</a>
     <a href="#contact" class="nav-cta">무료 상담</a>
   </nav>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="테마 전환">🌙</button>
   <button class="hamburger" onclick="toggleMenu()" aria-label="메뉴">
     <span></span><span></span><span></span>
   </button>
@@ -932,6 +981,27 @@
 </div>
 
 <script>
+  // Theme toggle
+  (function() {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    document.getElementById('themeToggle').textContent = isDark ? '☀️' : '🌙';
+  }
+
+  // Set initial icon
+  window.addEventListener('DOMContentLoaded', () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    document.getElementById('themeToggle').textContent = isDark ? '☀️' : '🌙';
+  });
+
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
   }
