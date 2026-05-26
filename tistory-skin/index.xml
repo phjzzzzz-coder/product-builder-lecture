@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<skin version="1.0">
-  <name>박형진팀장_보험블로그</name>
-  <author>박형진</author>
-  <description>굿리치 BTS사업단 박형진 팀장 보험 블로그</description>
-  <preview>preview.jpg</preview>
+<skin version="2.0" id="bhj-insurance-blog">
+  <preview>
+    <image>preview.png</image>
+  </preview>
+  <menus>
+    <menu name="COVER" style="default"/>
+    <menu name="LIST" style="default"/>
+    <menu name="POST" style="default"/>
+    <menu name="TAG" style="default"/>
+    <menu name="LOCATION" style="default"/>
+    <menu name="MEDIA" style="default"/>
+    <menu name="GUESTBOOK" style="default"/>
+  </menus>
+  <variables/>
 </skin>
